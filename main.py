@@ -15,8 +15,13 @@ import smtplib
 import os
 from dotenv import load_dotenv
 
+##DOTENV
+load_dotenv("D:/Programming/PythonEnV/.env.txt")
+MY_EMAIL = os.getenv("MY_EMAIL")
+PASSWORD = os.getenv("PASSWORD")
+
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(32)
+app.secret_key = os.getenv("SECRET_KEY")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
@@ -24,14 +29,10 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///blog.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL", "sqlite:///blog.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-##DOTENV
-load_dotenv("D:/Programming/PythonEnV/.env.txt")
-MY_EMAIL = os.getenv("MY_EMAIL")
-PASSWORD = os.getenv("PASSWORD")
 
 ##GRAVATAR
 gravatar = Gravatar(app,
