@@ -8,11 +8,13 @@ from sqlalchemy.orm import relationship
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
+import secrets
 from functools import wraps
 import bleach
 import smtplib
 import os
 from dotenv import load_dotenv
+import re
 
 ##DOTENV
 load_dotenv("D:/Programming/PythonEnV/.env.txt")
