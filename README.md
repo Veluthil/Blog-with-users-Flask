@@ -1,18 +1,11 @@
 # Blog-with-users-Flask
 
-I made this blog project in Python with the Flask framework and Bootstrap. The database is created in SQLite with the 
-help of SQLAlchemy - passwords are hashed (sha256) and salted to protect sensitive data.
-My project includes an admin account, which is why some functionalities (adding new posts, editing existing posts, 
-deleting posts and comments) are disabled and hidden from regular users. All the routes for those functions are 
-forbidden for non-admin clients to avoid accessing them via URL.
-Commenting is available only for registered and logged-in users.
-Tab 'Contact' allows all the viewers to send an email form to my inbox (smtplib module, SMTP protocol).
+This is a Python-based blog project built using the Flask web framework and Bootstrap. The application uses a PostgreSQL database, which was created with the help of SQLAlchemy. Passwords are hashed and salted using sha256 to protect sensitive data.
 
-With cybersecurity in mind, an algorithm parses each client's HTML input. It sanitizes tags, attributes, unescaped 
-characters, and unclosed and misnested tags.
+The project includes an admin account, which has access to additional functionalities such as adding new posts, editing existing posts, deleting posts, and comments. These functionalities are disabled and hidden from regular users. The routes for these functions are forbidden for non-admin clients to prevent unauthorized access.
 
-I deployed this project on render.com: 
-https://martyna-blog.onrender.com
+Registered and logged-in users can leave comments on the blog posts. The 'Contact' tab allows viewers to send an email form to the site owner's inbox using the smtplib module and SMTP protocol.
 
-This project is still unfinished, as I want to add other functionalities.
+The project prioritizes cybersecurity by using an algorithm to sanitize each client's HTML input. The algorithm removes unwanted tags, attributes, unescaped characters, and unclosed or misnested tags.
 
+The project is currently deployed on Render at https://martyna-blog.onrender.com. However, it is still unfinished, and I plan to add more functionalities in the future.
