@@ -30,7 +30,7 @@ The project is currently deployed on Render at https://martyna-blog.onrender.com
 ![fb-ss-4](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/47ea011b-69dd-485b-b8c7-4ce80f56463c)
 
 ## Installation
-1. Clone the repository: git clone https://github.com/username/project.git
+1. Clone the repository: git clone https://github.com/Veluthil/Blog-with-users-Flask.git
 2. Change directory into the project folder: cd project
 3. Install the required packages: pip install -r requirements.txt
 4. Create a PostgreSQL database.
