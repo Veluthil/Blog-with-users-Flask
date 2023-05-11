@@ -24,14 +24,14 @@ The project prioritizes cybersecurity by using an algorithm to sanitize each cli
 The project is currently deployed on Render at https://martyna-blog.onrender.com.
 
 ## Preview
-- User's View:
+> User's View:
 ![fb-ss-1](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/abf35067-6f87-4feb-9a10-310e07cd6b54)
 ![fb-ss-2](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/8509001b-13ed-4033-b17f-fb7d5c685eae)
 ![fb-ss-3](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/bec5c90c-e17d-4a16-a736-59461c884dc0)
 ![fb-ss-4](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/47ea011b-69dd-485b-b8c7-4ce80f56463c)
 
 ----
-- Admin's View:
+> Admin's View:
 ![fb-ss-5](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/dd4556ea-619c-41ee-a1bb-b40239919de7)
 ![fb-ss-6](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/940f5154-47ba-4899-a3b6-e3f32c9444fc)
 ![fb-ss-7](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/c2b9ea4e-88ca-478c-a4cd-85f0878a4631)
