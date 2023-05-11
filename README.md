@@ -24,9 +24,9 @@ The project prioritizes cybersecurity by using an algorithm to sanitize each cli
 The project is currently deployed on Render at https://martyna-blog.onrender.com.
 
 ## Installation
-Clone the repository: git clone https://github.com/username/project.git
-Change directory into the project folder: cd project
-Install the required packages: pip install -r requirements.txt
-Create a PostgreSQL database.
-Rename .env.example to .env and replace the placeholders with your database URL and email credentials.
-Run the application: flask run
+1. Clone the repository: git clone https://github.com/username/project.git
+2. Change directory into the project folder: cd project
+3. Install the required packages: pip install -r requirements.txt
+4. Create a PostgreSQL database.
+5. Rename .env.example to .env and replace the placeholders with your database URL and email credentials.
+6. Run the application: flask run
