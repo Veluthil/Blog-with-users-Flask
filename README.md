@@ -1,4 +1,4 @@
-# Blog with users
+# Martyna's Blog
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 ![Jinja](https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black)
@@ -22,6 +22,12 @@ The project prioritizes cybersecurity by using an algorithm to sanitize each cli
 
 ## Deployment
 The project is currently deployed on Render at https://martyna-blog.onrender.com.
+
+## Preview
+![fb-ss-1](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/abf35067-6f87-4feb-9a10-310e07cd6b54)
+![fb-ss-2](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/8509001b-13ed-4033-b17f-fb7d5c685eae)
+![fb-ss-3](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/bec5c90c-e17d-4a16-a736-59461c884dc0)
+![fb-ss-4](https://github.com/Veluthil/Blog-with-users-Flask/assets/108438343/47ea011b-69dd-485b-b8c7-4ce80f56463c)
 
 ## Installation
 1. Clone the repository: git clone https://github.com/username/project.git
