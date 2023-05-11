@@ -40,8 +40,8 @@ The project is currently deployed on Render at https://martyna-blog.onrender.com
 
 ## Installation
 1. Clone the repository: git clone https://github.com/Veluthil/Blog-with-users-Flask.git
-2. Change directory into the project folder: cd project
+2. Change directory into the project folder
 3. Install the required packages: pip install -r requirements.txt
 4. Create a PostgreSQL database.
-5. Rename .env.example to .env and replace the placeholders with your database URL and email credentials.
-6. Run the application: flask run
+5. Change environmental variables to your own database URL and email credentials.
+6. Run the application
