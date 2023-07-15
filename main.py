@@ -19,7 +19,6 @@ from dotenv import load_dotenv
 # DOTENV
 load_dotenv("D:/Programming/PythonEnV/.env.txt")
 MY_EMAIL = os.getenv("EC_YOUR_EMAIL")
-PASSWORD = os.getenv("PASSWORD")
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY")
@@ -30,7 +29,7 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = os.getenv("EC_YOUR_EMAIL")
-app.config['MAIL_PASSWORD'] = os.getenv("SECRET_KEY")
+app.config['MAIL_PASSWORD'] = os.getenv("PASSWORD")
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv("EC_YOUR_EMAIL")
 
 mail = Mail(app)
