@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, flash, request, abort
+from flask_mail import Mail, Message
 from flask_bootstrap import Bootstrap
 from flask_ckeditor import CKEditor
 from datetime import date
@@ -14,9 +15,10 @@ import smtplib
 import os
 from dotenv import load_dotenv
 
-##DOTENV
+
+# DOTENV
 load_dotenv("D:/Programming/PythonEnV/.env.txt")
-MY_EMAIL = os.getenv("MY_EMAIL")
+MY_EMAIL = os.getenv("EC_YOUR_EMAIL")
 PASSWORD = os.getenv("PASSWORD")
 
 app = Flask(__name__)
@@ -24,10 +26,20 @@ app.secret_key = os.getenv("SECRET_KEY")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.getenv("EC_YOUR_EMAIL")
+app.config['MAIL_PASSWORD'] = os.getenv("PORTFOLIO_SECRET_KEY")
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv("EC_YOUR_EMAIL")
+
+mail = Mail(app)
+
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-##CONNECT TO DB
+# CONNECT TO DB
 uri = os.getenv("DATABASE_URL")
 if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://", 1)
@@ -36,7 +48,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
-##GRAVATAR
+# GRAVATAR
 gravatar = Gravatar(app,
                     size=100,
                     rating='g',
@@ -47,7 +59,7 @@ gravatar = Gravatar(app,
                     base_url=None)
 
 
-##SANITIZING HTML
+# SANITIZING HTML
 def strip_invalid_html(content):
     allowed_tags = ['a', 'abbr', 'acronym', 'address', 'b', 'br', 'div', 'dl', 'dt',
                     'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'i', 'img',
@@ -65,7 +77,7 @@ def strip_invalid_html(content):
     return cleaned
 
 
-##CONFIGURE TABLES
+# CONFIGURE TABLES
 
 class BlogPost(db.Model):
     __tablename__ = "blog_posts"
@@ -115,7 +127,7 @@ class Comment(db.Model):
 # db.create_all()
 
 
-##USERS FUNCTIONS
+# USERS FUNCTIONS
 def admin_only(function):
     @wraps(function)
     def decorating(*args, **kwargs):
@@ -133,7 +145,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-##BLOG ROUTES
+# BLOG ROUTES
 @app.route('/')
 def get_all_posts():
     posts = BlogPost.query.all()
@@ -231,15 +243,11 @@ def contact():
 
 
 def send_mail(name, email, phone, message):
-    with smtplib.SMTP("smtp.gmail.com") as connection:
-        connection.starttls()
-        connection.login(user=MY_EMAIL, password=PASSWORD)
-        email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}"
-        connection.sendmail(
-            from_addr=MY_EMAIL,
-            to_addrs=MY_EMAIL,
-            msg=email_message
-        )
+    recipients = [MY_EMAIL]
+    content = Message('My Blog Mail', recipients=recipients)
+    content.body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}"
+    mail.send(content)
+    return 'Email sent'
 
 
 @app.route("/new-post", methods=["GET", "POST"])
